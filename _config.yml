@@ -1,0 +1,25 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+# relative_permalinks: true
+
+# Setup
+title:               "@diaferiaj — Joseph Deferio"
+tagline:             ""
+description:         "Joseph Deferio"
+baseurl:             ""
+url:                 "http://jdeferio.github.io"
+paginate:            5
+
+# About/contact
+author:
+  name:              "Joseph Deferio"
+  url:               https://twitter.com/diaferiaj
+  email:             jdeferio@gmail.com
+  twitter:           diaferiaj
+
+# Custom vars
+version:             1.0.0
+
+# plugins:             [exifr]
