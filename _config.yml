@@ -5,7 +5,7 @@ permalink:           pretty
 # relative_permalinks: true
 
 # Setup
-title:               "@diaferiaj — Joseph Deferio"
+title:               "@djdeferio — Joseph Deferio"
 tagline:             ""
 description:         "Joseph Deferio"
 baseurl:             ""
@@ -15,9 +15,9 @@ paginate:            5
 # About/contact
 author:
   name:              "Joseph Deferio"
-  url:               https://twitter.com/diaferiaj
+  url:               https://twitter.com/jdeferio
   email:             jdeferio@gmail.com
-  twitter:           diaferiaj
+  twitter:           jdeferio
 
 # Custom vars
 version:             1.0.0
