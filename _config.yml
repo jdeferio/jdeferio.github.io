@@ -1,5 +1,4 @@
 # Permalinks
-#
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
 # relative_permalinks: true
@@ -21,5 +20,13 @@ author:
 
 # Custom vars
 version:             1.0.0
+
+# Social
+minima:
+  social_links:
+    twitter: jdeferio
+    github: jdeferio
+    stackoverflow: "3299050"
+    linkedin: joseph-j-deferio
 
 # plugins:             [exifr]
