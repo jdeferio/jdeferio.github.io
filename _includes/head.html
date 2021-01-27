@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    {% if page.title == "Home" %}
-      {{ site.title }} {{ site.tagline }}
+    {% if page.title == "Bio" %}
+      {{ site.title }} &nbsp;&#9738;&nbsp; {{ page.title }}
     {% else %}
-      {{ page.title }} &mdash; {{ site.title }}
+      {{ site.title }} &nbsp;&#9738;&nbsp; {{ page.title }}
     {% endif %}
   </title>
 
@@ -26,4 +26,6 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  {% seo %}
 </head>

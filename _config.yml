@@ -4,18 +4,24 @@ permalink:           pretty
 # relative_permalinks: true
 
 # Setup
-title:               "@jdeferio — Joseph Deferio"
+title:               "Joseph Deferio"
 tagline:             ""
 description:         "Joseph Deferio"
 baseurl:             ""
 url:                 "http://jdeferio.github.io"
 paginate:            5
 
-# About/contact
+# Pages
+pages_list:
+  Bio:               '/'
+  Projects:          '/projects'
+  Research:          '/research'
+
+# About
 author:
   name:              "Joseph Deferio"
   url:               https://twitter.com/jdeferio
-  email:             jdeferio@gmail.com
+  email:             jdeferio.io@gmail.com
   twitter:           jdeferio
 
 # Custom vars
