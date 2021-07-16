@@ -5,7 +5,7 @@ title: Projects
 
 ### Projects
 
-- <b>healthSystem</b> [<span style="color:green"><em>in-progress</em></span>]: 
+- <b>healthSystem</b> [<span style="color:#E6B105"><em>hold</em></span>]: 
     <br>
     The purpose of this project is to design and build a lightweight and easily modifiable health data system. This design will be modular to promote customization, and avoid large monolithic repositories. Intended features are to include a database schema, ETL tools, DICOM imaging database, and automation services. 
         
