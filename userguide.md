@@ -3,13 +3,12 @@ layout: page
 title: User Guide
 ---
 
-### <u>USER GUIDE</u> (WIP)
+### A <u>User Guide</u> for Joseph Deferio</u> (WIP)
 <br>
 
 __My Style__ 
 - analytical, curious, process & detail oriented, enthusiastic builder  
 <br>
-</br>
 
 __On environment values__  
 - Organization and sustainability over speed and instant gratification
@@ -20,7 +19,7 @@ __On environment values__
 - Transparency and inclusiveness
     - Inclusiveness and transparency are important to keeping teams well-informed and working towards a unified goal. There are times when its better to inform smaller groups so that decisions can be made faster, but overall I believe in not keeping people in the dark for too long.
 <br>
-</br>
+<br>
 
 __On Communication__  
 
@@ -37,7 +36,7 @@ __On Communication__
 - Give me time to verify the issues and potential outcomes. This will allow me propose appropriate solutions 
 - My communication style is typically straight and to the point. Please don’t interpret this as me being cold or careless. It helps me work efficiently and focus on what needs to get done.
 <br>
-</br>
+<br>
 
 __On Feedback__
 - Feedback is a gift.
@@ -49,7 +48,7 @@ __On Feedback__
     - If we can work through it, let’s jointly come up with action steps for improvement.
     - If resolution is not possible, its best to be open and honest, and deliver feedback with kindness and grace.
 <br>
-</br>
+<br>
 
 __Things that I could do without__  
 
@@ -59,7 +58,7 @@ __Things that I could do without__
     - As a leader, I aim to give my reports the tools for success and trust that they'll be able to deliver.
 - Last minute changes to an established plan without an explanation.
 <br>
-</br>
+<br>
 
 __What I'm working on__  
 
@@ -67,7 +66,7 @@ __What I'm working on__
 - I have a lot of pride in my work and maintain high expectations in all that I do. There are times when it's be 
 - Understanding that there are times when speed trumps structure and planning. I truly value a measured approach to building, however, there are sometimes circumstances in which this is not possible - and that is ok. 
 <br>
-</br>
+<br>
 
 __Personal__  
 
