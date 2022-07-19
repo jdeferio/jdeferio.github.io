@@ -3,7 +3,7 @@ layout: page
 title: User Guide
 ---
 
-### A <u>User Guide</u> for Joseph Deferio (WIP)
+### <u>User Guide</u>
 <br>
 
 __My Style__ 
