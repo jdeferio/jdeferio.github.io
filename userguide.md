@@ -54,7 +54,7 @@ __Things that I could do without__
 
 - Failing to follow through with communicated expectations.
 - Micro-managing. Full stop.
-    - Trust is an important element in any professional environment. If you feel the need to constantly check-in on your direct reports, we probably are not a good fit. 
+    - Trust is an important element in any professional environment. If you feel the need to constantly check-in on your direct reports, we are probably not a good fit. 
     - As a leader, I aim to give my reports the tools for success and trust that they'll be able to deliver.
 - Last minute changes to an established plan without an explanation.
 <br>
@@ -63,7 +63,7 @@ __Things that I could do without__
 __What I'm working on__  
 
 - Responding to calendar invites. Historically I have acted under the assumption that the other party knows I'll be joining (unless I explicitly decline). I am working to be more explicit in my actions and keep my calendar invites up to date.
-- I have a lot of pride in my work and maintain high expectations in all that I do. There are times when it's be 
+- I have a lot of pride in my work and maintain high expectations in all that I do. 
 - Understanding that there are times when speed trumps structure and planning. I truly value a measured approach to building, however, there are sometimes circumstances in which this is not possible - and that is ok. 
 <br>
 <br>
