@@ -6,7 +6,7 @@ title: User Guide
 ### <u>User Guide</u>
 <br>
 
-__My Style__ 
+__My style__ 
 - analytical, curious, process & detail oriented, enthusiastic builder  
 <br>
 
