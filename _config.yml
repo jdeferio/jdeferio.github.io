@@ -21,9 +21,7 @@ pages_list:
 # About
 author:
   name:              "Joseph Deferio"
-  url:               https://twitter.com/jdeferio
   email:             jdeferio.io@gmail.com
-  twitter:           jdeferio
 
 # Custom vars
 version:             1.0.0
