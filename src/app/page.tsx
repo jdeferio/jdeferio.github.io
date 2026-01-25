@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <Layout title="Bio" description="Joseph Deferio - Data Engineer and Researcher">
-      <div className="prose max-w-none">
+      <div className="prose max-w-none text-gray-900 prose-a:text-blue-700 prose-a:underline prose-a:underline-offset-2 prose-a:font-medium">
         {/* Profile Image */}
         <div className="mb-8 flex justify-center lg:justify-start">
           <Image

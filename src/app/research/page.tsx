@@ -330,7 +330,7 @@ const PresentationItem = ({ presentation }: { presentation: Presentation }) => (
 export default function ResearchPage() {
   return (
     <Layout title="Research">
-      <div className="prose max-w-none">
+      <div className="prose max-w-none text-gray-900 prose-a:text-blue-700 prose-a:underline prose-a:underline-offset-2 prose-a:font-medium">
         <h1>Research</h1>
         
         <section className="mb-12">

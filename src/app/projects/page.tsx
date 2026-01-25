@@ -97,7 +97,7 @@ const ExternalLink = ({ href, children }: { href: string; children: React.ReactN
 export default function ProjectsPage() {
   return (
     <Layout title="Projects">
-      <div className="prose max-w-none">
+      <div className="prose max-w-none text-gray-900 prose-a:text-blue-700 prose-a:underline prose-a:underline-offset-2 prose-a:font-medium">
         <h1>Projects</h1>
         
         <div className="space-y-8">
@@ -172,7 +172,7 @@ export default function ProjectsPage() {
                 <h4 className="font-semibold text-gray-900 mb-2">Tech Stack:</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech, idx) => (
-                    <span key={idx} className="tech-stack-item inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium">
+                    <span key={idx} className="inline-flex items-center rounded-md border border-gray-200 bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800 transition-colors hover:border-gray-300 hover:bg-gray-200">
                       <ExternalLink href={tech === 'Python' ? 'https://www.python.org' : 'https://www.postgresql.org'}>
                         {tech}
                       </ExternalLink>

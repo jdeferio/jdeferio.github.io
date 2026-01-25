@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function UserGuidePage() {
   return (
     <Layout title="User Guide">
-      <div className="prose max-w-none">
+      <div className="prose max-w-none text-gray-900 prose-a:text-blue-700 prose-a:underline prose-a:underline-offset-2 prose-a:font-medium">
         <h1>User Guide</h1>
         
         <div className="space-y-8">

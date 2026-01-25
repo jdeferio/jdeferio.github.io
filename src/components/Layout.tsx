@@ -17,7 +17,7 @@ export default function Layout({ children, title, description }: LayoutProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Sidebar */}
       <Sidebar isOpen={sidebarOpen} onToggle={toggleSidebar} />
 
