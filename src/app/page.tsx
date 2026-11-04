@@ -36,18 +36,16 @@ export default function Home() {
   return (
     <Layout title="Bio" description="Joseph Deferio - Data Engineer and Researcher">
       <div className="prose max-w-none text-gray-900 prose-a:text-blue-700 prose-a:underline prose-a:underline-offset-2 prose-a:font-medium">
-        {/* Profile Image */}
-        <div className="mb-8 flex justify-center lg:justify-start">
-          <Image
-            src="/images/jdeferio.jpg"
-            alt="Joseph Deferio"
-            title="Joseph Deferio"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-md"
-            priority
-          />
-        </div>
+        <section className="bio-intro" aria-labelledby="intro-title">
+          <div>
+            <p className="eyebrow">Engineering · Informatics · Research</p>
+            <h1 id="intro-title">Joseph Deferio</h1>
+            <p className="intro-summary">Data engineering, software, and health informatics.</p>
+            <div className="intro-links"><a href="/projects/">Explore projects →</a><a href="/research/">View research →</a></div>
+          </div>
+          <Image src="/images/jdeferio.jpg" alt="Joseph Deferio" width={200} height={200} className="profile-image" priority />
+        </section>
+        <h2>About me</h2>
 
         {/* Bio Content */}
         <div className="space-y-6">
