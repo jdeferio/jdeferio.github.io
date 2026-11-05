@@ -54,13 +54,24 @@ References:
 Use the existing Vercel account/team that hosts Onça. Import
 `jdeferio/jdeferio.github.io` with the Next.js framework preset and repository
 root as the root directory. `vercel.json` supplies the Yarn install and build
-commands. Use Node.js 22.x and the framework's default output directory;
+commands. Both commands invoke Corepack directly so a global Yarn Classic
+binary cannot silently ignore the Yarn 4 lockfile. The install log should show
+Yarn 4.5.3 and must not rewrite the lockfile.
+
+In Vercel Project Settings → Environment Variables, set
+`ENABLE_EXPERIMENTAL_COREPACK=1` for Production and Preview (and any other
+environment with native checks). This tells Vercel to honor `packageManager`
+when selecting Yarn, including for the separate native Lint and Typecheck
+jobs. Adding it only to a local `.env` file does not configure Vercel's runners.
+Redeploy after saving the project setting.
+
+Use Node.js 22.x and the framework's default output directory;
 remove any old `out` output-directory override. No GitHub Pages export is needed.
 
-Create a preview from `refactor-stucture` first. `master` still contains the
-old Jekyll site, so do not use it for the new project's production branch until
-the migration is merged. The GTM ID is configured in code; no required Vercel
-environment variables are needed. Optional overrides are in `.env.example`.
+Use `master` as the production branch and pull-request branches for previews.
+The GTM ID is configured in code; optional overrides are in `.env.example`.
+The Corepack project setting above is required for consistent package-manager
+selection in Vercel's runners.
 
 Verify the preview's pages, research downloads, metadata, and legacy redirects.
 The app intentionally does not initialize GTM on `*.vercel.app` previews.
@@ -85,3 +96,5 @@ For the domain cutover:
 The `jdeferio.github.io` hostname is controlled by GitHub Pages, so any redirect
 from that hostname must be handled there; Vercel cannot redirect traffic that
 never reaches it.
+
+Package-manager reference: https://vercel.com/docs/package-managers
