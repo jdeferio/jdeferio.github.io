@@ -5,13 +5,14 @@ React, TypeScript, and statically rendered pages deployed on Vercel.
 
 ## Development
 
-Use Yarn 4 through Corepack:
+Use Node.js 26 (`nvm use`) and Yarn 4.5.3 through Corepack. Node 26 no
+longer bundles Corepack; the commands below run a pinned version explicitly:
 
 ```sh
-corepack yarn install --immutable
-corepack yarn dev
-corepack yarn lint
-corepack yarn build
+npx --yes corepack@0.36.0 yarn install --immutable
+npx --yes corepack@0.36.0 yarn dev
+npx --yes corepack@0.36.0 yarn lint
+npx --yes corepack@0.36.0 yarn build
 ```
 
 Production builds are written to `.next/`; development uses `.next-dev/` so
@@ -54,9 +55,12 @@ References:
 Use the existing Vercel account/team that hosts Onça. Import
 `jdeferio/jdeferio.github.io` with the Next.js framework preset and repository
 root as the root directory. `vercel.json` supplies the Yarn install and build
-commands. Both commands invoke Corepack directly so a global Yarn Classic
-binary cannot silently ignore the Yarn 4 lockfile. The install log should show
-Yarn 4.5.3 and must not rewrite the lockfile.
+commands. Both commands invoke Corepack 0.36.0 explicitly through `npx`, since
+Node 26 no longer includes Corepack. This uses npm only to bootstrap Corepack;
+Yarn 4.5.3 installs project dependencies from the committed lockfile. A global
+Yarn Classic binary cannot silently ignore the Yarn 4 lockfile. The install
+log prints the Node version and should show Yarn 4.5.3 without rewriting the
+lockfile.
 
 In Vercel Project Settings → Environment Variables, set
 `ENABLE_EXPERIMENTAL_COREPACK=1` for Production and Preview (and any other
@@ -65,7 +69,7 @@ when selecting Yarn, including for the separate native Lint and Typecheck
 jobs. Adding it only to a local `.env` file does not configure Vercel's runners.
 Redeploy after saving the project setting.
 
-Use Node.js 22.x and the framework's default output directory;
+Use Node.js 26.x and the framework's default output directory;
 remove any old `out` output-directory override. No GitHub Pages export is needed.
 
 Use `master` as the production branch and pull-request branches for previews.
