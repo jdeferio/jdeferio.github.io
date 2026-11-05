@@ -7,10 +7,18 @@ import Ventures from '@/components/Ventures'
 import PersonalAside from '@/components/PersonalAside'
 import styles from './profile.module.css'
 
+const description = 'Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs. Backend systems, search, and ML infrastructure.'
+
 export const metadata: Metadata = {
   title: { absolute: 'Joseph Deferio | Senior Software Engineer & Founder' },
-  openGraph: { images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }], title: 'Joseph Deferio | Senior Software Engineer & Founder', description: 'Backend systems, search, ML infrastructure, and technical leadership.', url: '/' },
-  description: 'Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs. Backend systems, search, ML infrastructure, and technical leadership.',
+  openGraph: { type: 'website', siteName: 'Joseph Deferio', locale: 'en_US', images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }], title: 'Joseph Deferio | Senior Software Engineer & Founder', description, url: '/' },
+  description,
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Joseph Deferio | Senior Software Engineer & Founder',
+    description,
+    images: ['/opengraph-image'],
+  },
   alternates: { canonical: '/' },
 }
 

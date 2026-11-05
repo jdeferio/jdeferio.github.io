@@ -7,24 +7,27 @@ import JsonLd from '@/components/JsonLd'
 import { pageGraph } from '@/lib/structured-data'
 import { absoluteUrl, PERSON_ID } from '@/lib/site'
 
+const description = 'Research publications and presentations by Joseph Deferio in health informatics, mental health, and clinical research, including JAMIA and BMC Nephrology.'
+
 export const metadata: Metadata = {
-  title: 'Research',
-  description: 'Research publications and presentations by Joseph Deferio in mental health informatics, data science, and clinical research. Published in JAMIA, BMC Nephrology, and other journals.',
-  keywords: ['joseph deferio', 'research', 'publications', 'mental health', 'informatics', 'data science', 'clinical research', 'JAMIA', 'BMC Nephrology', 'depression', 'kidney disease'],
-  openGraph: { images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
-    title: 'Research',
-    description: 'Research publications and presentations by Joseph Deferio in mental health informatics, data science, and clinical research. Published in JAMIA, BMC Nephrology, and other journals.',
+  title: 'Research & publications',
+  description,
+  openGraph: {
     type: 'website',
+    siteName: 'Joseph Deferio',
+    locale: 'en_US',
+    title: 'Research & publications | Joseph Deferio',
+    description,
     url: '/research/',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
   },
-  twitter: { images: ['/opengraph-image'],
+  twitter: {
     card: 'summary_large_image',
-    title: 'Research',
-    description: 'Research publications and presentations by Joseph Deferio in mental health informatics, data science, and clinical research.',
+    title: 'Research & publications | Joseph Deferio',
+    description,
+    images: ['/opengraph-image'],
   },
-  alternates: {
-    canonical: '/research/',
-  },
+  alternates: { canonical: '/research/' },
 }
 
 interface Publication {
