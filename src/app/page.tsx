@@ -4,6 +4,7 @@ import Layout from '@/components/Layout'
 import JsonLd from '@/components/JsonLd'
 import { pageGraph } from '@/lib/structured-data'
 import Ventures from '@/components/Ventures'
+import PersonalAside from '@/components/PersonalAside'
 import styles from './profile.module.css'
 
 export const metadata: Metadata = {
@@ -46,6 +47,8 @@ export default function Home() {
           <div><p className={styles.eyebrow}>A foundation in informatics</p><h2 id="background-title">Engineering informed by research and team leadership.</h2></div>
           <div><p>Before adMarketplace, I built data services at Mercury Healthcare, grew the Informatics team at Covera Health from one to five, and led clinical informatics projects at Weill Cornell Medicine.</p><p>That background shapes how I approach data integrity, privacy, and the decisions systems support.</p><Link href="/research/">Research & publications <span aria-hidden="true">↗</span></Link></div>
         </section>
+
+        <PersonalAside />
 
         <section className={styles.contact} aria-labelledby="contact-title"><p className={styles.eyebrow}>Connect</p><h2 id="contact-title">Let’s talk engineering.</h2><a href="mailto:j.deferio@gmail.com">j.deferio@gmail.com <span aria-hidden="true">↗</span></a></section>
       </div>

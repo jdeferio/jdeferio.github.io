@@ -34,8 +34,7 @@ export const experience = [
   {
     organization: 'Weill Cornell Medicine',
     role: 'Health Informatics Project Manager (Data Scientist)',
-    period: 'March 2017–April 2019',
-    previousRole: 'Health Informatics Analyst · April 2016–March 2017',
+    period: 'April 2016–April 2019',
     points: [
       'Led database development and technical architecture for secure access to clinical research data.',
       'Managed research projects and trained a team of three health informatics staff and interns.',

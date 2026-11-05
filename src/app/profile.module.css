@@ -55,6 +55,22 @@
 
 .ventureMore { margin-top: 24px; font-size: 16px; }
 
+.personal { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 36px 0; border-top: 1px solid var(--rule); }
+.personal .eyebrow { margin-bottom: 12px; }
+.personal p:not(.eyebrow) { color: var(--muted); max-width: 490px; margin: 0 0 12px; }
+.personal a { font-size: 16px; }
+.capybaraCorner { flex: 0 0 140px; text-align: center; }
+.personal .capybaraGreeting { min-height: 26px; margin: 0; color: var(--accent); font-size: 15px; }
+.capybara { display: block; width: 140px; padding: 4px; border: 0; border-radius: 12px; background: transparent; color: var(--foreground); cursor: pointer; }
+.capybara:hover { color: var(--accent); }
+.capybara img { display: block; width: 112px; max-width: 100%; height: auto; margin: 0 auto; transform: scaleX(-1); }
+
+@media (max-width: 480px) {
+  .personal { align-items: flex-start; gap: 12px; }
+  .capybaraCorner { flex-basis: 100px; }
+  .capybara { width: 100px; }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .profile a span[aria-hidden] { display: inline-block; transition: transform 160ms ease; }
   .profile a:hover span[aria-hidden] { transform: translate(2px, -2px); }
