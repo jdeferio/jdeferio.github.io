@@ -26,7 +26,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .site-name::before { content: 'JD'; position: absolute; left: 0; top: 2px; display: grid; place-items: center; width: 40px; height: 44px; font-size: 21px; font-weight: 600; letter-spacing: -.08em; color: var(--background); background: var(--foreground); }
 .site-name span { display: block; margin-top: 5px; font-family: var(--font-sans); font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
 .site-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 16px; }
-.site-nav a { padding: 6px 0; border-bottom: 2px solid transparent; }
+.site-nav a { padding: 6px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); border-color: var(--accent); }
 .site-main { max-width: 960px; margin: 0 auto; padding: 72px 0 88px; min-height: 65vh; }
 .site-main .prose { max-width: none; font-size: 18px; line-height: 1.75; color: var(--foreground); --tw-prose-body: var(--foreground); --tw-prose-headings: var(--foreground); }
@@ -39,10 +39,18 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .site-footer a:hover { color: var(--accent); text-decoration: underline; }
 .skip-link { position: absolute; top: 8px; left: 8px; padding: 8px 16px; background: var(--background); transform: translateY(-160%); z-index: 50; }
 .skip-link:focus { transform: translateY(0); }
+@media (min-width: 721px) and (max-width: 960px) {
+  .site-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .site-nav { flex-wrap: nowrap; }
+}
 @media (max-width: 720px) {
   .site-shell { padding: 0 24px; }
-  .site-header { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px 0; }
-  .site-nav { gap: 8px 20px; }
+  .site-header { flex-direction: column; align-items: flex-start; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+  .site-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 6px 12px; }
+  .site-nav a { display: flex; align-items: center; min-height: 44px; padding: 8px 12px; border: 0; border-radius: 4px; line-height: 1.4; }
+  .site-nav a:hover { background: var(--surface); }
+  .site-nav a[aria-current="page"] { color: var(--accent); background: var(--surface); font-weight: 600; }
+  .site-nav a:focus-visible { outline-offset: 2px; }
   .site-main { padding: 44px 0 56px; }
   .site-footer { flex-wrap: wrap; }
 }
