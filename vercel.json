@@ -1,0 +1,83 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "corepack enable && yarn install --immutable",
+  "buildCommand": "yarn build",
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/projects/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.josephdeferio.com"
+        }
+      ],
+      "destination": "https://josephdeferio.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/research.html",
+      "destination": "/research/",
+      "permanent": true
+    },
+    {
+      "source": "/projects.html",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/userguide.html",
+      "destination": "/userguide/",
+      "permanent": true
+    },
+    {
+      "source": "/user-guide",
+      "destination": "/userguide/",
+      "permanent": true
+    },
+    {
+      "source": "/files/pics/jdeferio.jpg",
+      "destination": "/images/jdeferio.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/public/favicon.ico",
+      "destination": "/favicon.ico",
+      "permanent": true
+    }
+  ]
+}
