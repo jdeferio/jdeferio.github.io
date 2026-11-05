@@ -1,0 +1,5 @@
+Capybara illustration from SVG Repo
+Source: https://www.svgrepo.com/svg/70075/capybara
+License: CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+Modified: colors adapted to the website palette.
