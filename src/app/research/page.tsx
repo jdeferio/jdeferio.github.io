@@ -274,7 +274,7 @@ const presentations: Presentation[] = [
 
 const ResearchLink = ({ href, label, title }: { href: string; label: string; title: string }) => (
   <a href={href} aria-label={`${label}: ${title}`}>
-    {label} <span aria-hidden="true">↗</span>
+    {label}
   </a>
 )
 
