@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Layout from '@/components/Layout'
+import JsonLd from '@/components/JsonLd'
+import { pageGraph } from '@/lib/structured-data'
 import profileStyles from '../profile.module.css'
 import styles from './working.module.css'
 
@@ -8,13 +10,13 @@ const description = 'How Joseph Deferio approaches engineering, collaboration, l
 export const metadata: Metadata = {
   title: 'Working with me',
   description,
-  openGraph: {
+  openGraph: { images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
     title: 'Working with me | Joseph Deferio',
     description,
-    url: 'https://jdeferio.github.io/userguide/',
+    url: '/userguide/',
   },
-  twitter: {
-    card: 'summary',
+  twitter: { images: ['/opengraph-image'],
+    card: 'summary_large_image',
     title: 'Working with me | Joseph Deferio',
     description,
   },
@@ -63,6 +65,7 @@ const principles = [
 export default function UserGuidePage() {
   return (
     <Layout title="Working with me">
+      <JsonLd data={pageGraph('/userguide/', 'Working with me', 'WebPage')} />
       <div className={styles.working}>
         <header className={profileStyles.pageHeader}>
           <p className={profileStyles.eyebrow}>Collaboration & leadership</p>

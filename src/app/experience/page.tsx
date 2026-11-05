@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Layout from '@/components/Layout'
+import JsonLd from '@/components/JsonLd'
+import { pageGraph } from '@/lib/structured-data'
 import Ventures from '@/components/Ventures'
 import { experience } from '@/lib/experience'
 import styles from '../profile.module.css'
@@ -13,6 +15,7 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <Layout>
+      <JsonLd data={pageGraph('/experience/', 'Experience', 'ProfilePage')} />
       <div className={styles.profile}>
         <header className={styles.pageHeader}><p className={styles.eyebrow}>Career & leadership</p><h1>Experience</h1><p className={styles.summary}>Building data-intensive systems and the teams and practices behind them.</p></header>
         {experience.map((job) => (

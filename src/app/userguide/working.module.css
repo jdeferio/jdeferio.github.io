@@ -7,7 +7,7 @@
 }
 .introduction {
   max-width: 640px;
-  color: #60675f;
+  color: var(--muted);
   font-size: 17px;
   line-height: 1.65;
 }

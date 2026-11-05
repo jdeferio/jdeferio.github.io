@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import Layout from '@/components/Layout'
+import JsonLd from '@/components/JsonLd'
+import { pageGraph } from '@/lib/structured-data'
 import Ventures from '@/components/Ventures'
 import styles from './profile.module.css'
 
 export const metadata: Metadata = {
   title: { absolute: 'Joseph Deferio | Senior Software Engineer & Founder' },
-  openGraph: { title: 'Joseph Deferio | Senior Software Engineer & Founder', description: 'Backend systems, search, ML infrastructure, and technical leadership.', url: '/' },
+  openGraph: { images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }], title: 'Joseph Deferio | Senior Software Engineer & Founder', description: 'Backend systems, search, ML infrastructure, and technical leadership.', url: '/' },
   description: 'Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs. Backend systems, search, ML infrastructure, and technical leadership.',
   alternates: { canonical: '/' },
 }
@@ -14,6 +16,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <Layout>
+      <JsonLd data={pageGraph('/', 'Joseph Deferio', 'ProfilePage')} />
       <div className={styles.profile}>
         <section className={styles.hero} aria-labelledby="profile-title">
           <p className={styles.eyebrow}>New York · Software engineering & leadership</p>
@@ -24,7 +27,7 @@ export default function Home() {
           <div className={styles.actions}><Link href="/experience/">Experience <span aria-hidden="true">↗</span></Link><a href="mailto:j.deferio@gmail.com">Get in touch <span aria-hidden="true">↗</span></a></div>
         </section>
 
-        <section className={styles.section} aria-labelledby="impact-title">
+        <section className={`${styles.section} ${styles.engineering}`} aria-labelledby="impact-title">
           <div className={styles.sectionHeading}><p className={styles.eyebrow}>Engineering at adMarketplace</p><h2 id="impact-title">Systems. Decisions. Outcomes.</h2></div>
           <div className={styles.impactGrid}>
             <article><p className={styles.metric}>100M+</p><h3>Documents in search</h3><p>Led the transition from lexical to semantic retrieval across a large document catalog.</p></article>
@@ -33,7 +36,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="ventures-title">
+        <section className={`${styles.section} ${styles.founders}`} aria-labelledby="ventures-title">
           <div className={styles.sectionHeading}><p className={styles.eyebrow}>Alongside my engineering career</p><h2 id="ventures-title">Founder roles</h2></div>
           <Ventures />
           <p className={styles.ventureMore}><Link href="/experience/#founder-title">More about my work as a founder <span aria-hidden="true">↗</span></Link></p>

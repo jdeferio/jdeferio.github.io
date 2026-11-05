@@ -16,6 +16,7 @@ coverage/
 
 ### Next.js
 .next/
+.next-dev/
 out/
 build/
 .cache/               # sometimes created by Next/Turbopack

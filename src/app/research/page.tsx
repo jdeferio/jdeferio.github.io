@@ -3,24 +3,27 @@ import Layout from '@/components/Layout'
 import { Metadata } from 'next'
 import profileStyles from '../profile.module.css'
 import styles from './research.module.css'
+import JsonLd from '@/components/JsonLd'
+import { pageGraph } from '@/lib/structured-data'
+import { absoluteUrl, PERSON_ID } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Research',
   description: 'Research publications and presentations by Joseph Deferio in mental health informatics, data science, and clinical research. Published in JAMIA, BMC Nephrology, and other journals.',
   keywords: ['joseph deferio', 'research', 'publications', 'mental health', 'informatics', 'data science', 'clinical research', 'JAMIA', 'BMC Nephrology', 'depression', 'kidney disease'],
-  openGraph: {
+  openGraph: { images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
     title: 'Research',
     description: 'Research publications and presentations by Joseph Deferio in mental health informatics, data science, and clinical research. Published in JAMIA, BMC Nephrology, and other journals.',
     type: 'website',
-    url: 'https://jdeferio.github.io/research',
+    url: '/research/',
   },
-  twitter: {
-    card: 'summary',
+  twitter: { images: ['/opengraph-image'],
+    card: 'summary_large_image',
     title: 'Research',
     description: 'Research publications and presentations by Joseph Deferio in mental health informatics, data science, and clinical research.',
   },
   alternates: {
-    canonical: 'https://jdeferio.github.io/research',
+    canonical: '/research/',
   },
 }
 
@@ -275,8 +278,8 @@ const ResearchLink = ({ href, label, title }: { href: string; label: string; tit
   </a>
 )
 
-const PublicationItem = ({ publication }: { publication: Publication }) => (
-  <li className={styles.entry}>
+const PublicationItem = ({ publication, id }: { publication: Publication; id: string }) => (
+  <li id={id} className={styles.entry}>
     <article>
       <p className={styles.date}>{publication.date}</p>
       <h4>{publication.title}</h4>
@@ -286,8 +289,8 @@ const PublicationItem = ({ publication }: { publication: Publication }) => (
   </li>
 )
 
-const PresentationItem = ({ presentation }: { presentation: Presentation }) => (
-  <li className={styles.entry}>
+const PresentationItem = ({ presentation, id }: { presentation: Presentation; id: string }) => (
+  <li id={id} className={styles.entry}>
     <article>
       <p className={styles.date}>{presentation.date}</p>
       <h4>{presentation.title}</h4>
@@ -307,9 +310,42 @@ function groupByYear<T extends { date: string }>(items: T[]) {
   return years.map((year) => ({ year, items: items.filter((item) => item.date.endsWith(year)) }))
 }
 
+const researchGraph = {
+  ...pageGraph('/research/', 'Research & publications', 'CollectionPage'),
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: publications.length + presentations.length,
+    itemListElement: [
+      ...publications.map((publication, index) => ({
+        '@type': 'ListItem', position: index + 1,
+        item: {
+          '@type': 'ScholarlyArticle',
+          '@id': absoluteUrl(`/research/#publication-${index + 1}`),
+          name: publication.title,
+          author: { '@id': PERSON_ID },
+          isPartOf: { '@type': 'Periodical', name: publication.journal },
+          encoding: { '@type': 'MediaObject', contentUrl: absoluteUrl(publication.pdfUrl), encodingFormat: 'application/pdf' },
+        },
+      })),
+      ...presentations.map((presentation, index) => ({
+        '@type': 'ListItem', position: publications.length + index + 1,
+        item: {
+          '@type': 'CreativeWork',
+          '@id': absoluteUrl(`/research/#presentation-${index + 1}`),
+          name: presentation.title,
+          author: { '@id': PERSON_ID },
+          description: [presentation.venue, presentation.date, presentation.location].filter(Boolean).join(' · '),
+          ...(presentation.links.abstract ? { encoding: { '@type': 'MediaObject', contentUrl: absoluteUrl(presentation.links.abstract), encodingFormat: 'application/pdf' } } : {}),
+        },
+      })),
+    ],
+  },
+}
+
 export default function ResearchPage() {
   return (
     <Layout title="Research">
+      <JsonLd data={researchGraph} />
       <div className={styles.research}>
         <header className={profileStyles.pageHeader}>
           <p className={profileStyles.eyebrow}>Research archive · 2012–2020</p>
@@ -322,7 +358,7 @@ export default function ResearchPage() {
           {groupByYear(publications).map(({ year, items }) => (
             <section key={year} className={styles.yearGroup} aria-labelledby={`papers-${year}`}>
               <h3 id={`papers-${year}`}>{year}</h3>
-              <ul>{items.map((publication) => <PublicationItem key={publication.title} publication={publication} />)}</ul>
+              <ul>{items.map((publication) => <PublicationItem key={publication.title} publication={publication} id={`publication-${publications.indexOf(publication) + 1}`} />)}</ul>
             </section>
           ))}
         </section>
@@ -331,7 +367,7 @@ export default function ResearchPage() {
           {groupByYear(presentations).map(({ year, items }) => (
             <section key={year} className={styles.yearGroup} aria-labelledby={`talks-${year}`}>
               <h3 id={`talks-${year}`}>{year}</h3>
-              <ul>{items.map((presentation) => <PresentationItem key={presentation.title} presentation={presentation} />)}</ul>
+              <ul>{items.map((presentation) => <PresentationItem key={presentation.title} presentation={presentation} id={`presentation-${presentations.indexOf(presentation) + 1}`} />)}</ul>
             </section>
           ))}
         </section>

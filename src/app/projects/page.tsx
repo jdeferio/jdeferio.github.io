@@ -8,19 +8,19 @@ export const metadata: Metadata = {
 
   description: 'Software development projects by Joseph Deferio, including healthSystem and PsychPredict - data engineering and health informatics solutions.',
   keywords: ['joseph deferio', 'projects', 'software development', 'health informatics', 'data engineering', 'healthSystem', 'PsychPredict', 'python', 'postgresql'],
-  openGraph: {
+  openGraph: { images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
     title: 'Archived Projects',
     description: 'Software development projects by Joseph Deferio, including healthSystem and PsychPredict - data engineering and health informatics solutions.',
     type: 'website',
-    url: 'https://jdeferio.github.io/projects',
+    url: '/projects/',
   },
-  twitter: {
-    card: 'summary',
+  twitter: { images: ['/opengraph-image'],
+    card: 'summary_large_image',
     title: 'Archived Projects',
     description: 'Software development projects by Joseph Deferio, including healthSystem and PsychPredict - data engineering and health informatics solutions.',
   },
   alternates: {
-    canonical: 'https://jdeferio.github.io/projects',
+    canonical: '/projects/',
   },
 }
 
