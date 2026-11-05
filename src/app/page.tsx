@@ -1,216 +1,50 @@
-import React from 'react'
-import Image from 'next/image'
+import Link from 'next/link'
+import type { Metadata } from 'next'
 import Layout from '@/components/Layout'
-import { Metadata } from 'next'
+import Ventures from '@/components/Ventures'
+import styles from './profile.module.css'
 
 export const metadata: Metadata = {
-  title: 'Bio - Joseph Deferio',
-  description: 'Joseph Deferio - Data Engineer and Researcher specializing in data engineering, software engineering, informatics, and data science.',
-  keywords: ['joseph deferio', 'jdeferio', 'joseph', 'deferio', 'deferioj', 'data engineering', 'software engineering', 'engineering', 'informatics', 'data science'],
-  openGraph: {
-    title: 'Bio - Joseph Deferio',
-    description: 'Joseph Deferio - Data Engineer and Researcher specializing in data engineering, software engineering, informatics, and data science.',
-    type: 'website',
-    url: 'https://jdeferio.github.io',
-    images: [
-      {
-        url: 'public/images/jdeferio.jpg',
-        width: 200,
-        height: 200,
-        alt: 'Joseph Deferio',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Bio - Joseph Deferio',
-    description: 'Joseph Deferio - Data Engineer and Researcher specializing in data engineering, software engineering, informatics, and data science.',
-    creator: '@jdeferio',
-  },
-  alternates: {
-    canonical: 'https://jdeferio.github.io',
-  },
+  title: { absolute: 'Joseph Deferio | Senior Software Engineer & Founder' },
+  openGraph: { title: 'Joseph Deferio | Senior Software Engineer & Founder', description: 'Backend systems, search, ML infrastructure, and technical leadership.', url: '/' },
+  description: 'Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs. Backend systems, search, ML infrastructure, and technical leadership.',
+  alternates: { canonical: '/' },
 }
 
 export default function Home() {
   return (
-    <Layout title="Bio" description="Joseph Deferio - Data Engineer and Researcher">
-      <div className="prose max-w-none text-gray-900 prose-a:text-blue-700 prose-a:underline prose-a:underline-offset-2 prose-a:font-medium">
-        <section className="bio-intro" aria-labelledby="intro-title">
-          <div>
-            <p className="eyebrow">Engineering · Informatics · Research</p>
-            <h1 id="intro-title">Joseph Deferio</h1>
-            <p className="intro-summary">Data engineering, software, and health informatics.</p>
-            <div className="intro-links"><a href="/projects/">Explore projects →</a><a href="/research/">View research →</a></div>
-          </div>
-          <Image src="/images/jdeferio.jpg" alt="Joseph Deferio" width={200} height={200} className="profile-image" priority />
+    <Layout>
+      <div className={styles.profile}>
+        <section className={styles.hero} aria-labelledby="profile-title">
+          <p className={styles.eyebrow}>New York · Software engineering & leadership</p>
+          <h1 id="profile-title">Joseph Deferio</h1>
+          <p className={styles.headline}>Deep technical work.<br />Broad ownership.</p>
+          <p className={styles.summary}>I build data-intensive backend systems, lead initiatives across teams, and mentor engineers. My work spans search, ML infrastructure, and low-latency serving platforms.</p>
+          <p className={styles.current}>Senior Software Engineer at <a href="https://www.admarketplace.com">adMarketplace</a></p>
+          <div className={styles.actions}><Link href="/experience/">Experience <span aria-hidden="true">↗</span></Link><a href="mailto:j.deferio@gmail.com">Get in touch <span aria-hidden="true">↗</span></a></div>
         </section>
-        <h2>About me</h2>
 
-        {/* Bio Content */}
-        <div className="space-y-6">
-          <p>
-            I am currently a data engineer at{' '}
-            <a 
-              href="https://www.admarketplace.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              adMarketplace
-            </a>{' '}
-            where I am responsible for building and maintaining media value measurement pipelines. I joined{' '}
-            <a 
-              href="https://www.admarketplace.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              adMarketplace
-            </a>{' '}
-            from{' '}
-            <a 
-              href="https://www.mercuryhealthcare.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              Mercury Healthcare
-            </a>{' '}
-            (formerly Healthgrades), where I was focused on building, implementing, and debugging data pipelines for our clients. In addition, my team and I worked to automate data processing, improve pipeline functionality, and build microservices for accessibility. Prior to this role, I was the Director of Informatics at{' '}
-            <a 
-              href="https://coverahealth.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              Covera Health
-            </a>
-            , where I led a multidisciplinary team to improve data throughput, shaped data ingestion strategy, and managed vendor relationships.
-          </p>
+        <section className={styles.section} aria-labelledby="impact-title">
+          <div className={styles.sectionHeading}><p className={styles.eyebrow}>Engineering at adMarketplace</p><h2 id="impact-title">Systems. Decisions. Outcomes.</h2></div>
+          <div className={styles.impactGrid}>
+            <article><p className={styles.metric}>100M+</p><h3>Documents in search</h3><p>Led the transition from lexical to semantic retrieval across a large document catalog.</p></article>
+            <article><p className={styles.metric}>Weeks → days</p><h3>Experimentation cycles</h3><p>Architected an ad-serving experimentation platform supporting more than 30 experiments.</p></article>
+            <article><p className={styles.metric}>6×</p><h3>Client conversion spend</h3><p>Increased client conversion spend through an earlier search redesign.</p></article>
+          </div>
+        </section>
 
-          <p>
-            Going further back, I worked in clinical informatics and research at{' '}
-            <a 
-              href="https://phs.weill.cornell.edu/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              Weill Cornell Medicine
-            </a>
-            . I was primarily focused on investigating aspects of{' '}
-            <a 
-              href="https://pubmed.ncbi.nlm.nih.gov/?term=deferio" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              mental health care
-            </a>
-            , including{' '}
-            <a 
-              href="https://www.ncbi.nlm.nih.gov/pubmed/31329877" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              social determinants
-            </a>
-            ,{' '}
-            <a 
-              href="https://www.ncbi.nlm.nih.gov/pubmed/30474077" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              prescription patterns
-            </a>
-            ,{' '}
-            <a 
-              href="https://www.ncbi.nlm.nih.gov/pubmed/30815052" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              diagnostic tools
-            </a>
-            , and{' '}
-            <a 
-              href="https://www.ncbi.nlm.nih.gov/pubmed/31984323" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              major depressive disorder
-            </a>
-            .
-          </p>
+        <section className={styles.section} aria-labelledby="ventures-title">
+          <div className={styles.sectionHeading}><p className={styles.eyebrow}>Alongside my engineering career</p><h2 id="ventures-title">Founder roles</h2></div>
+          <Ventures />
+          <p className={styles.ventureMore}><Link href="/experience/#founder-title">More about my work as a founder <span aria-hidden="true">↗</span></Link></p>
+        </section>
 
-          <p>
-            In a past life, prior to Weill Cornell Medicine, I investigated health disparities, diagnosis patterns, and mortality in patients with{' '}
-            <a 
-              href="https://www.ncbi.nlm.nih.gov/pubmed/28764654" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              End-Stage Renal Disease
-            </a>{' '}
-            for{' '}
-            <a 
-              href="https://research.downstate.edu/index.html" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              SUNY Downstate Health Sciences University
-            </a>
-            . At{' '}
-            <a 
-              href="https://kidneyresearchcenter.mgh.harvard.edu/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              Massachusetts General Hospital
-            </a>
-            , I made improvements to database design and workflows that resulted in increased quality control and data integrity. I also made contributions to research in the areas of{' '}
-            <a 
-              href="https://www.ncbi.nlm.nih.gov/pubmed/25770176" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              vitamin D supplementation
-            </a>
-            ,{' '}
-            <a 
-              href="https://www.ncbi.nlm.nih.gov/pubmed/23970130" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              protein carbamylation
-            </a>
-            , and{' '}
-            <a 
-              href="https://www.ncbi.nlm.nih.gov/pubmed/26266048" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              acute kidney injury
-            </a>
-            .
-          </p>
+        <section className={`${styles.section} ${styles.background}`} aria-labelledby="background-title">
+          <div><p className={styles.eyebrow}>A foundation in informatics</p><h2 id="background-title">Engineering informed by research and team leadership.</h2></div>
+          <div><p>Before adMarketplace, I built data services at Mercury Healthcare, grew the Informatics team at Covera Health from one to five, and led clinical informatics projects at Weill Cornell Medicine.</p><p>That background shapes how I approach data integrity, privacy, and the decisions systems support.</p><Link href="/research/">Research & publications <span aria-hidden="true">↗</span></Link></div>
+        </section>
 
-          <p>
-            I studied Community Health Sciences and Biostatistics at{' '}
-            <a 
-              title="MPH in Public Health" 
-              href="https://www.downstate.edu" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              SUNY Downstate Health Sciences University
-            </a>
-            . I also hold a degree in Biology from the{' '}
-            <a 
-              title="Columbian College of Arts and Sciences" 
-              href="https://columbian.gwu.edu/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              George Washington University
-            </a>
-            .
-          </p>
-        </div>
+        <section className={styles.contact} aria-labelledby="contact-title"><p className={styles.eyebrow}>Connect</p><h2 id="contact-title">Let’s talk engineering.</h2><a href="mailto:j.deferio@gmail.com">j.deferio@gmail.com <span aria-hidden="true">↗</span></a></section>
       </div>
     </Layout>
   )

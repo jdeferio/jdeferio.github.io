@@ -657,15 +657,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^16.1.4":
-  version: 16.1.4
-  resolution: "@next/eslint-plugin-next@npm:16.1.4"
-  dependencies:
-    fast-glob: "npm:3.3.1"
-  checksum: 10c0/1c2c0572aaad1881874a976bf17c57a2482db9b809db732650dcf07b352726d0a536537972f533276e5cba647784a46c397f7a9981f48c7c47ccccfff699b4b3
-  languageName: node
-  linkType: hard
-
 "@next/swc-darwin-arm64@npm:15.5.7":
   version: 15.5.7
   resolution: "@next/swc-darwin-arm64@npm:15.5.7"
@@ -3032,7 +3023,7 @@ __metadata:
   resolution: "jdeferio-portfolio@workspace:."
   dependencies:
     "@eslint/eslintrc": "npm:^3.3.3"
-    "@next/eslint-plugin-next": "npm:^16.1.4"
+    "@next/eslint-plugin-next": "npm:15.5.9"
     "@tailwindcss/typography": "npm:^0.5.19"
     "@types/node": "npm:^22.10.5"
     "@types/react": "npm:^19.0.2"

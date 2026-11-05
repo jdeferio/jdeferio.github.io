@@ -1,0 +1,35 @@
+.working h1 {
+  font-size: clamp(36px, 6vw, 52px);
+  font-weight: 600;
+  letter-spacing: -.035em;
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+.introduction {
+  max-width: 640px;
+  color: #60675f;
+  font-size: 17px;
+  line-height: 1.65;
+}
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 40px;
+  padding: 36px 0;
+  border-top: 1px solid var(--rule);
+}
+.section h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+}
+.section p {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.section p:last-child { margin-bottom: 0; }
+@media (max-width: 720px) {
+  .section { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
+}

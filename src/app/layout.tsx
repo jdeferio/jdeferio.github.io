@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: 'Joseph Deferio',
     template: '%s | Joseph Deferio',
   },
-  description: 'Joseph Deferio - Data Engineer and Researcher specializing in data engineering, software engineering, informatics, and data science.',
+  description: 'Joseph Deferio - Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs.',
   keywords: ['joseph deferio', 'jdeferio', 'data engineering', 'software engineering', 'informatics', 'data science', 'research', 'mental health'],
   authors: [{ name: 'Joseph Deferio', url: 'https://jdeferio.github.io' }],
   creator: 'Joseph Deferio',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url: 'https://jdeferio.github.io',
     siteName: 'Joseph Deferio',
     title: 'Joseph Deferio',
-    description: 'Joseph Deferio - Data Engineer and Researcher specializing in data engineering, software engineering, informatics, and data science.',
+    description: 'Joseph Deferio - Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs.',
     images: [
       {
         url: '/images/jdeferio.jpg',
@@ -48,11 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: 'Joseph Deferio',
-    description: 'Joseph Deferio - Data Engineer and Researcher specializing in data engineering, software engineering, informatics, and data science.',
-    creator: '@jdeferio',
-  },
-  verification: {
-    google: 'google-site-verification-placeholder',
+    description: 'Joseph Deferio - Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs.',
   },
 }
 
@@ -67,7 +63,7 @@ export default function RootLayout({
     "name": "Joseph Deferio",
     "url": "https://jdeferio.github.io",
     "image": "https://jdeferio.github.io/images/jdeferio.jpg",
-    "jobTitle": "Data Engineer",
+    "jobTitle": "Senior Software Engineer",
     "worksFor": {
       "@type": "Organization",
       "name": "adMarketplace"
@@ -101,6 +97,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Fonts are shared by every App Router page through this root layout. */}
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"

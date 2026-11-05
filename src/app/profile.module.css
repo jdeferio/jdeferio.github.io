@@ -1,0 +1,47 @@
+.profile { color: var(--foreground); }
+.eyebrow { color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; margin: 0 0 20px; }
+.hero { padding: 12px 0 72px; }
+.profile h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 600; letter-spacing: -.04em; line-height: 1.05; margin: 0 0 28px; }
+.headline { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 46px); letter-spacing: -.03em; line-height: 1.15; margin: 0 0 28px; }
+.summary { color: #60675f; font-size: 21px; line-height: 1.55; max-width: 640px; margin: 0 0 28px; }
+.current { font-size: 17px; margin: 32px 0 0; }
+.profile a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.profile a:hover { color: #173f33; }
+.actions { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 28px; font-size: 17px; }
+.section { padding: 48px 0; border-top: 1px solid var(--rule); }
+.sectionHeading { margin-bottom: 32px; }
+.profile h2 { font-size: 29px; font-weight: 600; line-height: 1.2; margin: 0 0 20px; }
+.profile h3 { font-size: 19px; font-weight: 600; line-height: 1.35; margin: 0 0 12px; }
+.impactGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.metric { font-family: var(--font-display); font-size: clamp(26px, 3vw, 36px); font-weight: 600; letter-spacing: -.03em; line-height: 1.2; color: var(--accent); margin: 0 0 24px; font-variant-numeric: tabular-nums; }
+.impactGrid article > p:last-child { font-size: 16px; color: #60675f; margin: 0; line-height: 1.6; }
+.venture { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+.venture .ventureRole { margin-top: 8px; font-size: 15px; }
+.venture .ventureContribution { margin-top: 16px; max-width: 530px; line-height: 1.6; }
+.ventureDomain { font-size: 15px; flex-shrink: 0; }
+.venture h3 { font-size: 25px; margin: 0; }
+.venture p { color: #60675f; font-size: 17px; margin: 0; }
+.background { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.background p:not(.eyebrow) { color: #60675f; margin: 0 0 20px; }
+.contact { padding: 48px 0 0; border-top: 1px solid var(--rule); }
+.pageHeader { padding: 12px 0 40px; }
+.job { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; border-top: 1px solid var(--rule); padding: 40px 0; }
+.period { font-size: 14px; color: #60675f; margin: 0 0 12px; }
+.job h2 { font-size: 23px; }
+.job ul { list-style: disc; padding-left: 20px; margin: 20px 0 0; }
+.job li { padding-left: 4px; margin-bottom: 14px; font-size: 17px; }
+.education > div { margin-top: 24px; }
+.education dt { font-weight: 600; }
+.education dd { color: #60675f; font-size: 16px; }
+@media (max-width: 720px) {
+  .hero { padding: 8px 0 44px; }
+  .impactGrid, .background, .job { grid-template-columns: 1fr; gap: 28px; }
+  .impactGrid article { padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+  .impactGrid article:last-child { padding-bottom: 0; border-bottom: 0; }
+  .metric { margin-bottom: 12px; }
+  .section { padding: 36px 0; }
+  .venture { flex-direction: column; gap: 8px; }
+  .job { gap: 12px; padding: 32px 0; }
+}
+
+.ventureMore { margin-top: 24px; font-size: 16px; }

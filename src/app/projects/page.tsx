@@ -3,18 +3,20 @@ import Layout from '@/components/Layout'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Projects - Joseph Deferio',
+  title: 'Archived Projects',
+  robots: { index: false, follow: true },
+
   description: 'Software development projects by Joseph Deferio, including healthSystem and PsychPredict - data engineering and health informatics solutions.',
   keywords: ['joseph deferio', 'projects', 'software development', 'health informatics', 'data engineering', 'healthSystem', 'PsychPredict', 'python', 'postgresql'],
   openGraph: {
-    title: 'Projects - Joseph Deferio',
+    title: 'Archived Projects',
     description: 'Software development projects by Joseph Deferio, including healthSystem and PsychPredict - data engineering and health informatics solutions.',
     type: 'website',
     url: 'https://jdeferio.github.io/projects',
   },
   twitter: {
     card: 'summary',
-    title: 'Projects - Joseph Deferio',
+    title: 'Archived Projects',
     description: 'Software development projects by Joseph Deferio, including healthSystem and PsychPredict - data engineering and health informatics solutions.',
   },
   alternates: {
@@ -98,7 +100,8 @@ export default function ProjectsPage() {
   return (
     <Layout title="Projects">
       <div className="prose max-w-none text-gray-900 prose-a:text-blue-700 prose-a:underline prose-a:underline-offset-2 prose-a:font-medium">
-        <h1>Projects</h1>
+        <h1>Archived projects</h1>
+        <p>Earlier work in health informatics and data engineering. These projects are retained for reference and are no longer active.</p>
         
         <div className="space-y-8">
           {projects.map((project, index) => (

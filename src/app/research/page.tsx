@@ -1,20 +1,22 @@
 import React from 'react'
 import Layout from '@/components/Layout'
 import { Metadata } from 'next'
+import profileStyles from '../profile.module.css'
+import styles from './research.module.css'
 
 export const metadata: Metadata = {
-  title: 'Research - Joseph Deferio',
+  title: 'Research',
   description: 'Research publications and presentations by Joseph Deferio in mental health informatics, data science, and clinical research. Published in JAMIA, BMC Nephrology, and other journals.',
   keywords: ['joseph deferio', 'research', 'publications', 'mental health', 'informatics', 'data science', 'clinical research', 'JAMIA', 'BMC Nephrology', 'depression', 'kidney disease'],
   openGraph: {
-    title: 'Research - Joseph Deferio',
+    title: 'Research',
     description: 'Research publications and presentations by Joseph Deferio in mental health informatics, data science, and clinical research. Published in JAMIA, BMC Nephrology, and other journals.',
     type: 'website',
     url: 'https://jdeferio.github.io/research',
   },
   twitter: {
     card: 'summary',
-    title: 'Research - Joseph Deferio',
+    title: 'Research',
     description: 'Research publications and presentations by Joseph Deferio in mental health informatics, data science, and clinical research.',
   },
   alternates: {
@@ -267,88 +269,71 @@ const presentations: Presentation[] = [
   }
 ]
 
-const ExternalLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    {children}
+const ResearchLink = ({ href, label, title }: { href: string; label: string; title: string }) => (
+  <a href={href} aria-label={`${label}: ${title}`}>
+    {label} <span aria-hidden="true">↗</span>
   </a>
 )
 
 const PublicationItem = ({ publication }: { publication: Publication }) => (
-  <div className="mb-6 pb-4 border-b border-gray-100 last:border-b-0">
-    <h3 className="text-lg font-medium text-gray-900 mb-2 leading-tight">
-      <em>{publication.title}</em>
-    </h3>
-    <div className="flex flex-wrap items-center gap-2 mb-2">
-      <ExternalLink href={publication.pdfUrl}>
-        paper
-      </ExternalLink>
-    </div>
-    <p className="text-gray-700">
-      <strong>{publication.journal}</strong>, {publication.date}.
-    </p>
-  </div>
+  <li className={styles.entry}>
+    <article>
+      <p className={styles.date}>{publication.date}</p>
+      <h4>{publication.title}</h4>
+      <p className={styles.venue}>{publication.journal}</p>
+      <div className={styles.links}><ResearchLink href={publication.pdfUrl} label="Read paper (PDF)" title={publication.title} /></div>
+    </article>
+  </li>
 )
 
 const PresentationItem = ({ presentation }: { presentation: Presentation }) => (
-  <div className="mb-6 pb-4 border-b border-gray-100 last:border-b-0">
-    <h3 className="text-lg font-medium text-gray-900 mb-2 leading-tight">
-      <em>{presentation.title}</em>
-    </h3>
-    <div className="flex flex-wrap items-center gap-2 mb-2">
-      {presentation.links.abstract && (
-        <ExternalLink href={presentation.links.abstract}>
-          abstract
-        </ExternalLink>
-      )}
-      {presentation.links.website && (
-        <ExternalLink href={presentation.links.website}>
-          website
-        </ExternalLink>
-      )}
-      {presentation.links.video && (
-        <ExternalLink href={presentation.links.video}>
-          video
-        </ExternalLink>
-      )}
-      {presentation.links.slides && (
-        <ExternalLink href={presentation.links.slides}>
-          slides
-        </ExternalLink>
-      )}
-    </div>
-    <p className="text-gray-700">
-      <strong>{presentation.venue}</strong>
-      {presentation.location && `, ${presentation.location}`}.
-    </p>
-  </div>
+  <li className={styles.entry}>
+    <article>
+      <p className={styles.date}>{presentation.date}</p>
+      <h4>{presentation.title}</h4>
+      <p className={styles.venue}>{presentation.venue}{presentation.location && ` · ${presentation.location}`}</p>
+      <div className={styles.links}>
+        {presentation.links.abstract && <ResearchLink href={presentation.links.abstract} label="Abstract (PDF)" title={presentation.title} />}
+        {presentation.links.website && <ResearchLink href={presentation.links.website} label="Event / journal" title={presentation.title} />}
+        {presentation.links.video && <ResearchLink href={presentation.links.video} label="Watch recording" title={presentation.title} />}
+        {presentation.links.slides && <ResearchLink href={presentation.links.slides} label="View slides" title={presentation.title} />}
+      </div>
+    </article>
+  </li>
 )
+
+function groupByYear<T extends { date: string }>(items: T[]) {
+  const years = [...new Set(items.map((item) => item.date.slice(-4)))].sort((a, b) => Number(b) - Number(a))
+  return years.map((year) => ({ year, items: items.filter((item) => item.date.endsWith(year)) }))
+}
 
 export default function ResearchPage() {
   return (
     <Layout title="Research">
-      <div className="prose max-w-none text-gray-900 prose-a:text-blue-700 prose-a:underline prose-a:underline-offset-2 prose-a:font-medium">
-        <h1>Research</h1>
-        
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Publications</h2>
-          <div className="space-y-4">
-            {publications.map((publication, index) => (
-              <PublicationItem key={index} publication={publication} />
-            ))}
-          </div>
+      <div className={styles.research}>
+        <header className={profileStyles.pageHeader}>
+          <p className={profileStyles.eyebrow}>Research archive · 2012–2020</p>
+          <h1>Research & publications</h1>
+          <p className={profileStyles.summary}>Published work in health informatics, mental health, and clinical research.</p>
+          <nav className={styles.jumpLinks} aria-label="Research sections"><a href="#publications">Publications <span>{publications.length}</span></a><a href="#presentations">Presentations & abstracts <span>{presentations.length}</span></a></nav>
+        </header>
+        <section id="publications" className={styles.collection} aria-labelledby="publications-title">
+          <div className={styles.collectionHeading}><h2 id="publications-title">Publications</h2><p>{publications.length} papers · 2013–2019</p></div>
+          {groupByYear(publications).map(({ year, items }) => (
+            <section key={year} className={styles.yearGroup} aria-labelledby={`papers-${year}`}>
+              <h3 id={`papers-${year}`}>{year}</h3>
+              <ul>{items.map((publication) => <PublicationItem key={publication.title} publication={publication} />)}</ul>
+            </section>
+          ))}
         </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Presentations, Posters, and Abstracts</h2>
-          <div className="space-y-4">
-            {presentations.map((presentation, index) => (
-              <PresentationItem key={index} presentation={presentation} />
-            ))}
-          </div>
+        <section id="presentations" className={styles.collection} aria-labelledby="presentations-title">
+          <div className={styles.collectionHeading}><h2 id="presentations-title">Presentations & abstracts</h2><p>Conference papers, posters, and talks · 2012–2020</p></div>
+          {groupByYear(presentations).map(({ year, items }) => (
+            <section key={year} className={styles.yearGroup} aria-labelledby={`talks-${year}`}>
+              <h3 id={`talks-${year}`}>{year}</h3>
+              <ul>{items.map((presentation) => <PresentationItem key={presentation.title} presentation={presentation} />)}</ul>
+            </section>
+          ))}
         </section>
       </div>
     </Layout>

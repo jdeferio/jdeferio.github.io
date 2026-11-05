@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
     <div className="site-shell">
       <a className="skip-link" href="#main-content">Skip to content</a>
       <header className="site-header">
-        <Link className="site-name" href="/">Joseph Deferio<span>Engineering & research</span></Link>
+        <Link className="site-name" href="/">Joseph Deferio<span>Software engineering & leadership</span></Link>
         <Navigation />
       </header>
       <main id="main-content" className="site-main">{children}</main>
