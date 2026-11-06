@@ -6,9 +6,26 @@ import Ventures from '@/components/Ventures'
 import { experience } from '@/lib/experience'
 import styles from '../profile.module.css'
 
+const description = 'Joseph Deferio’s experience in backend engineering, search, ML infrastructure, and informatics leadership.'
+
 export const metadata: Metadata = {
   title: 'Experience',
-  description: 'Joseph Deferio’s experience in backend engineering, search, ML infrastructure, and informatics leadership.',
+  description,
+  openGraph: {
+    type: 'website',
+    siteName: 'Joseph Deferio',
+    locale: 'en_US',
+    title: 'Experience | Joseph Deferio',
+    description,
+    url: '/experience/',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Experience | Joseph Deferio',
+    description,
+    images: ['/opengraph-image'],
+  },
   alternates: { canonical: '/experience/' },
 }
 

@@ -10,7 +10,7 @@ const description = 'How Joseph Deferio approaches engineering, collaboration, l
 export const metadata: Metadata = {
   title: 'Working with me',
   description,
-  openGraph: { images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
+  openGraph: { type: 'website', siteName: 'Joseph Deferio', locale: 'en_US', images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
     title: 'Working with me | Joseph Deferio',
     description,
     url: '/userguide/',

@@ -5,7 +5,7 @@ export default function Ventures({ detailed = false }: { detailed?: boolean }) {
   return ventures.map((venture) => (
     <article key={venture.url} className={styles.venture}>
       <div>
-        <h3><a href={venture.url}>{venture.name} <span aria-hidden="true">↗</span></a></h3>
+        <h3><a href={venture.url}>{venture.name}</a></h3>
         <p className={styles.ventureRole}>{venture.role}</p>
         <p className={styles.ventureContribution}>{venture.contribution}</p>
         {detailed && venture.details.map((detail) => (
@@ -17,7 +17,7 @@ export default function Ventures({ detailed = false }: { detailed?: boolean }) {
           </p>
         ))}
       </div>
-      <a className={styles.ventureDomain} href={venture.url}>{venture.domain}</a>
+      <a className={styles.ventureDomain} href={venture.url}>{venture.domain} <span aria-hidden="true">↗</span></a>
     </article>
   ))
 }

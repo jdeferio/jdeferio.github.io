@@ -13,7 +13,7 @@ export default function PersonalAside() {
       <div>
         <p className={styles.eyebrow} id="personal-title">Away from the keyboard</p>
         <p>Being a dad, running, and getting back to Brazil with family every year.</p>
-        <Link href="/userguide/#outside-work">A little more about me <span aria-hidden="true">↗</span></Link>
+        <Link href="/userguide/#outside-work">A little more about me</Link>
       </div>
       <div className={styles.capybaraCorner}>
         <p id="capybara-greeting" className={styles.capybaraGreeting} aria-live="polite">

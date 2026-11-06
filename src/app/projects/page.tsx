@@ -2,26 +2,28 @@ import React from 'react'
 import Layout from '@/components/Layout'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Archived Projects',
-  robots: { index: false, follow: true },
+const description = 'Archived health informatics and data engineering projects by Joseph Deferio, including healthSystem and PsychPredict. Retained for reference; no longer active.'
 
-  description: 'Software development projects by Joseph Deferio, including healthSystem and PsychPredict - data engineering and health informatics solutions.',
-  keywords: ['joseph deferio', 'projects', 'software development', 'health informatics', 'data engineering', 'healthSystem', 'PsychPredict', 'python', 'postgresql'],
-  openGraph: { images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
-    title: 'Archived Projects',
-    description: 'Software development projects by Joseph Deferio, including healthSystem and PsychPredict - data engineering and health informatics solutions.',
+export const metadata: Metadata = {
+  title: 'Archived projects',
+  description,
+  robots: { index: false, follow: true },
+  openGraph: {
     type: 'website',
+    siteName: 'Joseph Deferio',
+    locale: 'en_US',
+    title: 'Archived projects | Joseph Deferio',
+    description,
     url: '/projects/',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
   },
-  twitter: { images: ['/opengraph-image'],
+  twitter: {
     card: 'summary_large_image',
-    title: 'Archived Projects',
-    description: 'Software development projects by Joseph Deferio, including healthSystem and PsychPredict - data engineering and health informatics solutions.',
+    title: 'Archived projects | Joseph Deferio',
+    description,
+    images: ['/opengraph-image'],
   },
-  alternates: {
-    canonical: '/projects/',
-  },
+  alternates: { canonical: '/projects/' },
 }
 
 interface ProjectLink {
@@ -107,7 +109,7 @@ export default function ProjectsPage() {
           {projects.map((project, index) => (
             <div key={index} className="border-b border-gray-200 pb-8 last:border-b-0">
               <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-xl font-bold text-gray-900 m-0">{project.name}</h3>
+                <h2 className="text-xl font-bold text-gray-900 m-0">{project.name}</h2>
                 <StatusBadge status={project.status} />
               </div>
               
@@ -115,7 +117,7 @@ export default function ProjectsPage() {
               
               {project.inProgressFeatures && (
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">In-progress Features:</h4>
+                  <h3 className="text-base font-semibold text-gray-900 mb-2">In-progress Features:</h3>
                   <ul className="list-disc list-inside space-y-1">
                     {project.inProgressFeatures.map((feature, idx) => (
                       <li key={idx}>
@@ -130,7 +132,7 @@ export default function ProjectsPage() {
               
               {project.testing && (
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Testing:</h4>
+                  <h3 className="text-base font-semibold text-gray-900 mb-2">Testing:</h3>
                   <p className="text-gray-700">
                     {project.testing.includes('Synthea') ? (
                       <>
@@ -146,7 +148,7 @@ export default function ProjectsPage() {
               
               {project.plannedFeatures && (
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2 italic">Planned Features:</h4>
+                  <h3 className="text-base font-semibold text-gray-900 mb-2 italic">Planned Features:</h3>
                   <ul className="list-disc list-inside space-y-2">
                     {project.plannedFeatures.map((feature, idx) => (
                       <li key={idx} className="text-gray-700">
@@ -172,7 +174,7 @@ export default function ProjectsPage() {
               )}
               
               <div className="mt-4">
-                <h4 className="font-semibold text-gray-900 mb-2">Tech Stack:</h4>
+                <h3 className="text-base font-semibold text-gray-900 mb-2">Tech Stack:</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech, idx) => (
                     <span key={idx} className="inline-flex items-center rounded-md border border-gray-200 bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800 transition-colors hover:border-gray-300 hover:bg-gray-200">
