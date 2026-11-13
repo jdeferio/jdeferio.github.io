@@ -7,7 +7,7 @@ export const identityGraph = {
     {
       '@type': 'Person', '@id': PERSON_ID,
       name: 'Joseph Deferio', url: absoluteUrl('/'), image: absoluteUrl('/images/jdeferio.jpg'),
-      jobTitle: 'Senior Software Engineer',
+      jobTitle: 'Lead Software Engineer',
       worksFor: { '@type': 'Organization', name: 'adMarketplace', url: 'https://www.admarketplace.com' },
       affiliation: ventures.map(({ url }) => ({ '@id': `${url}/#organization` })),
       alumniOf: ['SUNY Downstate Health Sciences University', 'Northeastern University', 'The George Washington University'].map((name) => ({ '@type': 'CollegeOrUniversity', name })),

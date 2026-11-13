@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: 'Joseph Deferio',
     template: '%s | Joseph Deferio',
   },
-  description: 'Joseph Deferio - Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs.',
+  description: 'Joseph Deferio - Lead Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs.',
   keywords: ['joseph deferio', 'jdeferio', 'data engineering', 'software engineering', 'informatics', 'data science', 'research', 'mental health'],
   authors: [{ name: 'Joseph Deferio', url: SITE_URL }],
   creator: 'Joseph Deferio',
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: 'Joseph Deferio',
     title: 'Joseph Deferio',
-    description: 'Joseph Deferio - Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs.',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
+    description: 'Joseph Deferio - Lead Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs.',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Lead Software Engineer & Founder' }],
   },
   twitter: {
     images: ['/opengraph-image'],
     card: 'summary_large_image',
     title: 'Joseph Deferio',
-    description: 'Joseph Deferio - Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs.',
+    description: 'Joseph Deferio - Lead Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs.',
   },
 }
 
