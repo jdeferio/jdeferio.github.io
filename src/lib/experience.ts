@@ -1,9 +1,12 @@
 export const experience = [
   {
     organization: 'adMarketplace',
-    role: 'Senior Software Engineer',
-    period: 'January 2024–present',
-    previousRole: 'Senior Data Engineer · October 2022–January 2024',
+    role: 'Lead Software Engineer',
+    period: 'November 2026–present',
+    previousRoles: [
+      'Senior Software Engineer · January 2024–November 2026',
+      'Senior Data Engineer · October 2022–January 2024',
+    ],
     points: [
       'Led the transition from lexical to semantic search across a catalog of more than 100 million documents, building on an earlier search redesign that increased client conversion spend sixfold.',
       'Designed a dual-model embedding framework across ingestion and serving, enabling model iteration and A/B testing of retrieval strategies. Shipped two fine-tuned embedding models that improved click-through rate and relevance.',

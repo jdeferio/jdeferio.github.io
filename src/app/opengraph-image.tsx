@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'Joseph Deferio — Senior Software Engineer & Founder'
+export const alt = 'Joseph Deferio — Lead Software Engineer & Founder'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 export const dynamic = 'force-static'
@@ -14,7 +14,7 @@ export default function OpenGraphImage() {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div style={{ display: 'flex', fontSize: 82, fontWeight: 700, letterSpacing: '-4px', marginBottom: 16 }}>Joseph Deferio</div>
-        <div style={{ display: 'flex', fontSize: 30, color: '#254f89' }}>Senior Software Engineer at adMarketplace</div>
+        <div style={{ display: 'flex', fontSize: 30, color: '#254f89' }}>Lead Software Engineer at adMarketplace</div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', background: '#e8eef6', padding: '24px 28px', fontSize: 24 }}>
         <div style={{ display: 'flex', marginBottom: 8 }}>Co-founder, Caridi Concierge · Founder, Onça Labs</div>

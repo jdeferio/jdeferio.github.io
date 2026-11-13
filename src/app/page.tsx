@@ -7,15 +7,15 @@ import Ventures from '@/components/Ventures'
 import PersonalAside from '@/components/PersonalAside'
 import styles from './profile.module.css'
 
-const description = 'Senior Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs. Backend systems, search, and ML infrastructure.'
+const description = 'Lead Software Engineer at adMarketplace, co-founder of Caridi Concierge, and founder of Onça Labs. Backend systems, search, and ML infrastructure.'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Joseph Deferio | Senior Software Engineer & Founder' },
-  openGraph: { type: 'website', siteName: 'Joseph Deferio', locale: 'en_US', images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }], title: 'Joseph Deferio | Senior Software Engineer & Founder', description, url: '/' },
+  title: { absolute: 'Joseph Deferio | Lead Software Engineer & Founder' },
+  openGraph: { type: 'website', siteName: 'Joseph Deferio', locale: 'en_US', images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Lead Software Engineer & Founder' }], title: 'Joseph Deferio | Lead Software Engineer & Founder', description, url: '/' },
   description,
   twitter: {
     card: 'summary_large_image',
-    title: 'Joseph Deferio | Senior Software Engineer & Founder',
+    title: 'Joseph Deferio | Lead Software Engineer & Founder',
     description,
     images: ['/opengraph-image'],
   },
@@ -32,7 +32,7 @@ export default function Home() {
           <h1 id="profile-title">Joseph Deferio</h1>
           <p className={styles.headline}>Deep technical work.<br />Broad ownership.</p>
           <p className={styles.summary}>I build data-intensive backend systems, lead initiatives across teams, and mentor engineers. My work spans search, ML infrastructure, and low-latency serving platforms.</p>
-          <p className={styles.current}>Senior Software Engineer at <a href="https://www.admarketplace.com">adMarketplace</a></p>
+          <p className={styles.current}>Lead Software Engineer at <a href="https://www.admarketplace.com">adMarketplace</a></p>
           <div className={styles.actions}><Link href="/experience/">Experience</Link><a href="mailto:j.deferio@gmail.com">Get in touch</a></div>
         </section>
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: 'Experience | Joseph Deferio',
     description,
     url: '/experience/',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Lead Software Engineer & Founder' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -38,7 +38,7 @@ export default function ExperiencePage() {
         {experience.map((job) => (
           <section key={job.organization} className={styles.job}>
             <div><p className={styles.period}>{job.period}</p><h2>{job.organization}</h2></div>
-            <div><h3>{job.role}</h3>{job.previousRole && <p className={styles.period}>{job.previousRole}</p>}<ul>{job.points.map((point) => <li key={point}>{point}</li>)}</ul></div>
+            <div><h3>{job.role}</h3>{job.previousRoles?.map((role) => <p key={role} className={styles.period}>{role}</p>)}<ul>{job.points.map((point) => <li key={point}>{point}</li>)}</ul></div>
           </section>
         ))}
         <section className={styles.section} aria-labelledby="founder-title"><p className={styles.eyebrow}>Entrepreneurship</p><h2 id="founder-title">Founder roles</h2><Ventures detailed />

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Archived projects | Joseph Deferio',
     description,
     url: '/projects/',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Senior Software Engineer & Founder' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joseph Deferio — Lead Software Engineer & Founder' }],
   },
   twitter: {
     card: 'summary_large_image',
