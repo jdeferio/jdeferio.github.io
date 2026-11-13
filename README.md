@@ -72,7 +72,7 @@ Redeploy after saving the project setting.
 Use Node.js 26.x and the framework's default output directory;
 remove any old `out` output-directory override. No GitHub Pages export is needed.
 
-Use `master` as the production branch and pull-request branches for previews.
+Use `main` as the production branch and pull-request branches for previews.
 The GTM ID is configured in code; optional overrides are in `.env.example`.
 The Corepack project setting above is required for consistent package-manager
 selection in Vercel's runners.
